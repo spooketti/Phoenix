@@ -1,0 +1,28 @@
+html,body
+{
+    height:100%;
+    width:100%;
+    overflow-x: clip;
+}
+
+#navbar
+{
+    position: fixed;
+    top:0;
+    left:0;
+    height:7%;
+    width:100%;
+    background-color: black;
+    z-index: 1;
+    transition: all .5s;
+    color:white;
+    display:flex;
+    justify-content: space-between;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#mainWrapper
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
