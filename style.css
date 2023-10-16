@@ -1,28 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 html,body
 {
     height:100%;
     width:100%;
     overflow-x: clip;
+    font-family: 'Montserrat', sans-serif;
+    color:white;
 }
+
+:root
+{
+    --border-hex:#ffffff6f;
+}
+
+/*SRIIIII!!!!!! ded e e dnana ndaead ede ded eo bauear abre breheehe*/
 
 #navbar
 {
+    padding: 1%;
     position: fixed;
     top:0;
     left:0;
     height:7%;
     width:100%;
     background-color: black;
-    z-index: 1;
+    z-index: 2;
     transition: all .5s;
     color:white;
     display:flex;
-    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-bottom: 1px solid var(--border-hex);
+    gap:1%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: xx-large;
 }
 
-#mainWrapper
+#navIcon
 {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    height:100%;
 }
+
+#NavCol
+{
+    position: fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:25%;
+    background-color: black;
+    border-right: 1px solid var(--border-hex);
+    z-index: 1;
+}
+
+#PostCol
+{
+    position: fixed;
+    top:0;
+    left:25%;
+    height:100%;
+    width:50%;
+    background-color: black;
+}
+
+#NewsCol
+{
+    position: fixed;
+    top:0;
+    left:75%;
+    height:100%;
+    width:25%;
+    background-color: black;
+    border-left: 1px solid var(--border-hex);
+    z-index: 1;
+}
+
+
+
+#PostIntro
+{
+    position: relative;
+    top:0;
+    left:0;
+    height:7%;
+    width:100%;
+    background-color: white;
+    color:white;
+    display: flex;
+    background-color: black;
+    align-items: center;
+    border-bottom: 1px solid var(--border-hex);
+    padding:1%;
+}
+
+.PostImg
+{
+    height: 3em;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+#Posts
+{
+    position: relative;
+    left:0;
+    width:100%;
+}
+
