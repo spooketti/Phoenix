@@ -197,3 +197,30 @@ html,body
     text-decoration: none;
     color:white;
 }
+
+#navPost
+{
+    background-color: orange;
+    border-radius: 10% / 80%;
+    height: 80%;
+    width: 30%;
+    position: relative;
+    left: 50%;
+    color:black;
+    border:none;
+    font-size: xx-large;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .75s;
+}
+
+#navPost:hover
+{
+    background-color: rgb(255, 102, 0);
+    color:white;
+}
+
+#navPost:active
+{
+    filter:brightness(50%);
+}
+
