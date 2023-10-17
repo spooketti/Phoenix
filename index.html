@@ -10,7 +10,7 @@
   <body>
     <nav id="navbar">
       <img src="images/icon.png" id="navIcon">
-      <span>Phoenix</span>
+      <span><a href="index.html">Phoenix</a></span>
     </nav>
         <div id="NavCol"></div>
         <div id="PostCol">
@@ -19,13 +19,20 @@
           </div>
           <div id="Posts">
               <div class="Post">
-                <img src="images/icon.png" class="PostImg">
-                <span>Username</span>
+                <div class="UserHold">
+                  <img src="images/icon.png" class="PostImg">
+                <span><a href="profile.html?Name=Username">Username</a></span>
+                </div>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo quibusdam nostrum ratione dignissimos fugit doloremque necessitatibus officiis libero dolor, laudantium placeat, odio expedita, provident eius sequi harum corporis consequuntur distinctio.</p>
               </div>
+             
           </div>
         </div>
         <div id="NewsCol"></div>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script src="src/nav.js"></script>
+    <script src="src/profile.js"></script>
   </body>
 </html>
