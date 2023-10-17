@@ -23,7 +23,7 @@
               <div class="Post">
                 <div class="UserHold">
                   <img src="images/icon.png" class="PostImg">
-                <span><a href="profile.html?Name=Username">Username</a></span>
+                <a href="profile.html?Name=Username">Username</a>
                 </div>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo quibusdam nostrum ratione dignissimos fugit doloremque necessitatibus officiis libero dolor, laudantium placeat, odio expedita, provident eius sequi harum corporis consequuntur distinctio.</p>
               </div>
@@ -39,14 +39,19 @@
                 <img id="PostHeadPFP" src="images/icon.png">
               </div>
               <div id="PostBody">
-
+                <textarea id="PostBodyInput"></textarea>
+              </div>
+              <div id="PostFooter">
+                <button id="PostFooterPostButton" onclick="submitPost()">Post</button>
               </div>
           </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-    <script src = "index.js"></script>
+  <script src="src/post.js"></script>
+    <script src = "src/index.js"></script>
     <script src = "src/nav.js"></script>
+    <script src="src/loadpost.js"></script>
   </body>
 </html>

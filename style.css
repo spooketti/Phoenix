@@ -232,7 +232,7 @@ html,body
     height:100%;
     width:100%;
     z-index: 1;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -291,3 +291,47 @@ html,body
 }
 
 /*bro what happend*/
+
+#PostBodyInput
+{
+    position: relative;
+    left:0;
+    height:100%;
+    width:100%;
+    padding: 0%;
+    margin:0;
+    border:0;
+    overflow: hidden;
+    white-space: pre-wrap;
+    background-color: rgb(104, 101, 101);
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+}
+#PostFooter
+{
+    position: relative;
+    left:0;
+    height:10%;
+    width:100%;
+}
+#PostFooterPostButton
+{
+    background-color: orange;
+    border-radius: 10% / 80%;
+    height: 50%;
+    width: 20%;
+    position: relative;
+    top:25%;
+    left: 70%;
+    color:black;
+    border:none;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .5s;
+}
+
+#PostFooterPostButton:hover
+{
+    background-color: rgb(255, 102, 0);
+    color:white;
+}

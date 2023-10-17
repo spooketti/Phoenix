@@ -1,3 +1,4 @@
+/*
 var posting = document.getElementById("Posts")
 var posts = [
     ["", "Rando on Phoenix", "I want to have a fair and weighted desision on this, should pinapple belong on pizza"], 
@@ -34,3 +35,4 @@ function newPost(){
 }
 
 newPost()
+*/

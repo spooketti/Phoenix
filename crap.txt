@@ -1,9 +1,0 @@
-the original plan was for us to be able to use DynamoDB for this project but unforutnately we can't do that because of a firewall :))))
-
-sadly we're going to have to use firebase because not only are we on a time crunch
-
-it works with our firewall
-
-whenever one of us reads this:
-
-maybe look into sql lite?
