@@ -7,13 +7,13 @@
               </div> */
 
 const postsRef = db.ref("Posts/")
-let PostCol = document.getElementById("PostCol")
+let PostCol = document.getElementById("Posts")
 postsRef.on("child_added", function(snapshot) {
     const dbPost = snapshot.val();
     let Username = "Jon"
     let post = document.createElement("div")
     post.className = "Post"
-    PostCol.appendChild(post)
+    PostCol.insertBefore(post,PostCol.firstChild)
     
     let userHold = document.createElement("div")
     userHold.className = "UserHold"
@@ -33,4 +33,16 @@ postsRef.on("child_added", function(snapshot) {
     postContent.innerText = dbPost.message
     post.appendChild(postContent)
 
+    let postDate = document.createElement("span")
+    let dateString = new Date(dbPost.timestamp)
+
+    const dd = String(dateString.getDate()).padStart(2, '0');
+    const mm = String(dateString.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const yyyy = dateString.getFullYear();
+  
+    let time =  dateString.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    dateString = mm + '/' + dd + '/' + yyyy + " at " + time;
+    postDate.innerText = dateString
+    postDate.className = "PostDate"
+    post.appendChild(postDate)
 })

@@ -50,6 +50,7 @@ function submitPost()
     let message = document.getElementById("PostBodyInput").value
     db.ref("Posts/" + timestamp).set({
         message,
+        timestamp
       });
     hidePostMenu()
 }

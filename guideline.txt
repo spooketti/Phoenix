@@ -3,3 +3,12 @@ script order
 firebase scripts
 navbar
 post
+
+warning: a new security vulnerability has come
+right now it's possible to overwite other peoples text messages by doing
+
+let message = "hacked"
+let timestamp = Date.now()
+db.ref("Posts/1697581179638").set({message,timestamp})
+
+help!
