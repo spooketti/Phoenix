@@ -11,7 +11,7 @@
     <nav id="navbar">
       <img src="images/icon.png" id="navIcon">
       <span><a href="index.html">Phoenix</a></span>
-      <button id="navPost">Post</button>
+      <button id="navPost" onclick="document.getElementById('CreatePost').style.display = 'flex'">Post</button>
     </nav>
         <div id="NavCol"></div>
         <div id="PostCol">
@@ -29,6 +29,19 @@
           </div>
         </div>
         <div id = "NewsCol"></div>
+        <div id="CreatePost">
+          <div id="ModalClose"></div>
+          <div id="PostPrompt">
+              <div id="PostHead">
+                <button style="background:none; border:none; cursor:pointer; color:white;" onclick="document.getElementById('CreatePost').style.display = 'none';">X</button>
+                <span id="PostHeadUsername">Posting as Username</span>
+                <img id="PostHeadPFP" src="images/icon.png">
+              </div>
+              <div id="PostBody">
+
+              </div>
+          </div>
+        </div>
         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
