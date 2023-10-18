@@ -53,6 +53,7 @@ function submitPost()
         timestamp
       });
     hidePostMenu()
+    document.getElementById("PostBodyInput").value = ""
 }
 
 function hidePostMenu()
