@@ -353,6 +353,12 @@ html,body
     align-items: center;
     gap:3%;
     margin-left:3%;
+    transition: all 1s;
+}
+
+#NavProfile:hover
+{
+  background-color: rgb(58, 58, 58);
 }
 
 #navPFP

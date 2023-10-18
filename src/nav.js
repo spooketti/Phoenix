@@ -1,8 +1,9 @@
 let scrollbuffer = 0;
 let navBar = document.getElementById("navbar")
+let CreatePost = document.getElementById("CreatePost")
 document.addEventListener("scroll", function(){
    let ypos = window.scrollY
-   if (ypos > scrollbuffer) {
+   if (ypos > scrollbuffer || CreatePost.style.display == "flex") {
       navbarVis = false
       navBar.style.transform = "translateY(-100%)"
       

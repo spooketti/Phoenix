@@ -13,7 +13,8 @@
     <nav id="navbar">
       <img src="images/icon.png" id="navIcon">
       <span><a href="index.html">Phoenix</a></span>
-      <button id="navPost" onclick="document.getElementById('CreatePost').style.display = 'flex'">Post</button>
+      <button id="navPost" onclick="document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false;
+      navBar.style.transform = 'translateY(-100%)'">Post</button>
       <div id="NavProfile">
         <img src="images/icon.png" id="navPFP">
         <span id="navName">Username</span>
