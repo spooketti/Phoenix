@@ -35,4 +35,18 @@ function newPost(){
 }
 
 newPost()
-*/
+*//*
+fetch("https://my-json-server.typicode.com/typicode/demo/db")
+  .then((response) => response.json())
+  .then((json) =>homeJoke(json));
+
+  function homeJoke(json)
+  {
+    bruh = json
+    document.getElementById("joke").innerText = bruh["posts"][Math.round(Math.random()*2)]["title"]
+
+  }
+  */
+
+  //let jokeBar = document.getElementById("joke").innerText = 
+
