@@ -25,7 +25,7 @@ html,body
     height:7%;
     width:100%;
     background-color: black;
-    z-index: 2;
+    z-index: 4;
     transition: all .5s;
     color:white;
     display:flex;

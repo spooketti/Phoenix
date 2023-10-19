@@ -11,9 +11,9 @@
   </head>
   <body>
     <div id="navMouse" onmouseenter="navbarVis = true;
-    navBar.style.transform = 'translateY(0%)'" onmouseleave="navbarVis = false;
-    navBar.style.transform = 'translateY(-100%)'"></div>
-    <nav id="navbar">
+    navBar.style.transform = 'translateY(0%)'"></div>
+    <nav id="navbar" onmouseleave="navbarVis = false;
+    navBar.style.transform = 'translateY(-100%)'">
       <img src="images/icon.png" id="navIcon">
       <span><a href="index.html">Phoenix</a></span>
       <button id="navPost" onclick="document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false;
