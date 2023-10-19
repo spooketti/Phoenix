@@ -374,3 +374,8 @@ html,body
 {
     padding-top: 50%;
 }
+
+a
+{
+    color: orange;
+}
