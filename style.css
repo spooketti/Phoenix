@@ -296,9 +296,9 @@ html,body
 {
     position: relative;
     left:0;
-    height:100%;
-    width:100%;
-    padding: 0%;
+    height:98%;
+    width:98%;
+    padding: 1%;
     margin:0;
     border:0;
     overflow: hidden;
@@ -388,4 +388,9 @@ a
     height:7%;
     width:100%;
     z-index: 3;
+}
+
+pre
+{
+    font-family: 'Montserrat', sans-serif;
 }

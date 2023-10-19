@@ -22,12 +22,12 @@ postsRef.on("child_added", function(snapshot) {
     usernameAnchor.href = `profile.html?Name=${Username}`
     userHold.appendChild(usernameAnchor)
 
-    let postContent = document.createElement("p")
+    let postContent = document.createElement("pre")
     let postText = urlify(dbPost.message)
     let htmlArr = []
     for(let i=0;i<postText.length;i++)
     {
-      let textSection = document.createElement(htmlArr[i])
+      let textSection = document.createElement("span")
       if((postText[i] || '').split(urlRegex).length > 1)
       {
         textSection = document.createElement("a")
