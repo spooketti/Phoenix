@@ -379,3 +379,13 @@ a
 {
     color: orange;
 }
+
+#navMouse
+{
+    position: fixed;
+    top:0;
+    left:0;
+    height:7%;
+    width:100%;
+    z-index: 3;
+}
