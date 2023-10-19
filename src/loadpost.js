@@ -30,7 +30,10 @@ postsRef.on("child_added", function(snapshot) {
     userHold.appendChild(usernameAnchor)
 
     let postContent = document.createElement("p")
-    postContent.innerText = dbPost.message
+    let postText = urlify(dbPost.message)
+    let postSpan = document.createElement("span")
+    postContent.innerText = urlify(dbPost.message)
+    
     post.appendChild(postContent)
 
     let postDate = document.createElement("span")
@@ -46,3 +49,15 @@ postsRef.on("child_added", function(snapshot) {
     postDate.className = "PostDate"
     post.appendChild(postDate)
 })
+
+
+
+function urlify(text) {
+  var urlRegex = /(https?:\/\/[^\s]+)/g;
+ // alert(1)
+  return text.replace(urlRegex, function(url) {
+    return '<a href="' + url + '">' + url + '</a>';
+  })
+  // or alternatively
+  // return text.replace(urlRegex, '<a href="$1">$1</a>')
+}

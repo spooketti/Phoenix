@@ -12,3 +12,12 @@ let timestamp = Date.now()
 db.ref("Posts/1697581179638").set({message,timestamp})
 
 help!
+
+to do:
+add user system
+add character limit
+add likes system
+add profiles
+add Posts
+add images
+add navbars
