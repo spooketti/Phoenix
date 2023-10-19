@@ -34,30 +34,21 @@ postsRef.on("child_added", function(snapshot) {
     let postText = urlify(dbPost.message)
     //let postSpan = document.createElement("span")
     let htmlArr = []
-    let textSection
-    for(let i=0;i<postText.length;i++)
-    {
-      htmlArr.push("span")
-      if((postText[i] || '').split(urlRegex).length > 1)
-      {
-        htmlArr[i] = "a"
-      }
-    }
-    //console.log(htmlArr)
+    //let textSection
     for(let i=0;i<postText.length;i++)
     {
       let textSection = document.createElement(htmlArr[i])
-      textSection.innerText = postText[i]
-      //console.log(postText[i])
-      if(htmlArr[i] == "a")
+      if((postText[i] || '').split(urlRegex).length > 1)
       {
+        textSection = document.createElement("a")
         textSection.href = postText[i]
         textSection.target = "_blank"
         textSection.rel = "noopener"
       }
+      textSection.innerText = postText[i]
       postContent.appendChild(textSection)
     }
-    //postContent.innerHTML = textSection
+   
     
     post.appendChild(postContent)
 
@@ -88,3 +79,24 @@ function urlify(text) {
   //link true
   //string false
 }
+
+/*
+   for(let i=0;i<postText.length;i++)
+    {
+      htmlArr.push("span")
+      if((postText[i] || '').split(urlRegex).length > 1)
+      {
+        htmlArr[i] = "a"
+      }
+      let textSection = document.createElement(htmlArr[i])
+      textSection.innerText = postText[i]
+      //console.log(postText[i])
+      if(htmlArr[i] == "a")
+      {
+        textSection.href = postText[i]
+        textSection.target = "_blank"
+        textSection.rel = "noopener"
+      }
+      postContent.appendChild(textSection)
+    }
+*/
