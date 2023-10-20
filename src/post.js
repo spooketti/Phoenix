@@ -48,6 +48,9 @@ function submitPost()
 {
     const timestamp = Date.now();
     let message = document.getElementById("PostBodyInput").value
+    if (!/\S/.test(message)) { //why would you do it like this
+      return
+    }
     db.ref("Posts/" + timestamp).set({
         message,
         timestamp

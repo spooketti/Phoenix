@@ -190,6 +190,18 @@ html,body
 {
     color:white;
     text-decoration: none;
+    background:linear-gradient(to right, orange 20%, #c16f04 30%, #d39b03 70%, orange 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: textShine 7s ease-in-out infinite;
+}
+
+@keyframes textShine {
+    to{
+        background-position: 200%;
+    }
 }
 
 .UserHold a
@@ -378,6 +390,7 @@ html,body
 a
 {
     color: orange;
+    
 }
 
 #navMouse
@@ -394,3 +407,4 @@ pre
 {
     font-family: 'Montserrat', sans-serif;
 }
+
