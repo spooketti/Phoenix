@@ -24,7 +24,6 @@ postsRef.on("child_added", function(snapshot) {
 
     let postContent = document.createElement("pre")
     let postText = urlify(dbPost.message)
-    let htmlArr = []
     for(let i=0;i<postText.length;i++)
     {
       let textSection = document.createElement("span")

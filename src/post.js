@@ -59,7 +59,8 @@ function submitPost()
       });
     hidePostMenu()
     navBar.style.transform = 'translateY(0%)'
-    console.log("Post was submited")
+    //console.log("Post was submited")
+    document.getElementById("PostBodyInput").value = ""
 }
 
 function hidePostMenu()
