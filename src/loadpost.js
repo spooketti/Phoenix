@@ -33,7 +33,14 @@ postsRef.on("child_added", function(snapshot) {
         textSection.href = postText[i]
         textSection.target = "_blank"
         textSection.rel = "noopener"
+        if(postText[i].match(/^http[^\?]*.(jpg|jpeg|gif|png|tiff|bmp|webp)(\?(.*))?$/gmi) != null)
+          {
+            textSection = document.createElement("img")
+            textSection.src = postText[i]
+            textSection.className = "PostPhoto"
+          }
       }
+      
       textSection.innerText = postText[i]
       postContent.appendChild(textSection)
     }
