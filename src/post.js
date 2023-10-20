@@ -48,12 +48,14 @@ function submitPost()
 {
     const timestamp = Date.now();
     let message = document.getElementById("PostBodyInput").value
-    if (!/\S/.test(message)) { //why would you do it like this
+    let likes = 0
+    if (!/\S/.test(message)) { //white space
       return
     }
     db.ref("Posts/" + timestamp).set({
         message,
-        timestamp
+        timestamp,
+        likes
       });
     hidePostMenu()
     document.getElementById("PostBodyInput").value = ""
