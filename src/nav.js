@@ -14,4 +14,3 @@ document.addEventListener("scroll", function(){
    } 
    scrollbuffer = ypos <= 0 ? 0 : ypos; 
 });
-

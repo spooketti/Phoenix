@@ -58,7 +58,8 @@ function submitPost()
         likes
       });
     hidePostMenu()
-    document.getElementById("PostBodyInput").value = ""
+    navBar.style.transform = 'translateY(0%)'
+    console.log("Post was submited")
 }
 
 function hidePostMenu()
@@ -69,4 +70,12 @@ function hidePostMenu()
 function showPostMenu()
 {
     postMenu.style.display = "none"
+}
+
+function closeMenu(){
+  var navbar = document.getElementById("navbar")
+  document.getElementById('CreatePost').style.display = 'none';
+  // document.getElementById("PostBodyInput").value = ""in
+  // navbar.style.display = 'in';
+  navBar.style.transform = 'translateY(0%)'
 }
