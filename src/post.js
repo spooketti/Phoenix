@@ -48,15 +48,13 @@ function submitPost()
 {
     const timestamp = Date.now();
     let message = document.getElementById("PostBodyInput").value
-    if (!/\S/.test(message)) { //why would you do it like this
-      return
-    }
     db.ref("Posts/" + timestamp).set({
         message,
         timestamp
       });
     hidePostMenu()
-    document.getElementById("PostBodyInput").value = ""
+    navBar.style.transform = 'translateY(0%)'
+    console.log("Post was submited")
 }
 
 function hidePostMenu()
@@ -67,4 +65,12 @@ function hidePostMenu()
 function showPostMenu()
 {
     postMenu.style.display = "none"
+}
+
+function closeMenu(){
+  var navbar = document.getElementById("navbar")
+  document.getElementById('CreatePost').style.display = 'none';
+  // document.getElementById("PostBodyInput").value = ""in
+  // navbar.style.display = 'in';
+  navBar.style.transform = 'translateY(0%)'
 }
