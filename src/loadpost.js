@@ -1,5 +1,7 @@
 const postsRef = db.ref("Posts/")
 let urlRegex = /(https?:\/\/[^\s]+)/g; //just detects links
+let tildaRegex = /(```)/; //code block opener regex
+//let postRegex = /(https?:\/\/[^\s]+)|(```)/g
 let PostCol = document.getElementById("Posts")
 postsRef.on("child_added", function(snapshot) {
     const dbPost = snapshot.val();
@@ -23,11 +25,35 @@ postsRef.on("child_added", function(snapshot) {
     userHold.appendChild(usernameAnchor)
 
     let postContent = document.createElement("pre")
-    let postText = urlify(dbPost.message)
+    let postText = urlify(dbPost.message)//(dbPost.message).split(tildaRegex)
+    //console.log(postText)
+    //postText = urlify(postText)
+    let isCodeOpen = false
+    let codeSection = null
+    postText = postText.filter(elm => elm)
     for(let i=0;i<postText.length;i++)
     {
+      let dontAppend = false
+      console.log(postText)
       let textSection = document.createElement("span")
-      if((postText[i] || '').split(urlRegex).length > 1)
+      if(postText[i] == "```")
+      {
+        dontAppend = true
+        isCodeOpen = !isCodeOpen
+        if(isCodeOpen)
+        {
+          //let preSection = document.createElement("pre")
+          //postContent.appendChild(preSection)
+          codeSection = document.createElement("code")
+          postContent.appendChild(codeSection)
+        }
+      }
+      else if(isCodeOpen)
+      {
+        dontAppend = true
+        codeSection.innerText = postText[i]
+      }
+      else if((postText[i] || '').split(urlRegex).length > 1)
       {
         textSection = document.createElement("a")
         textSection.href = postText[i]
@@ -41,8 +67,11 @@ postsRef.on("child_added", function(snapshot) {
           }
       }
       
-      textSection.innerText = postText[i]
-      postContent.appendChild(textSection)
+      if(!dontAppend)
+      {
+        postContent.appendChild(textSection)
+        textSection.innerText = postText[i]
+      }
     }
    
     
@@ -60,10 +89,11 @@ postsRef.on("child_added", function(snapshot) {
     postDate.innerText = dateString
     postDate.className = "PostDate"
     post.appendChild(postDate)
+    hljs.highlightAll()
 })
 
 
 
 function urlify(text) {
-  return text.split(urlRegex)
+  return text.split(urlRegex).flatMap(part => part.split(tildaRegex));
 }
