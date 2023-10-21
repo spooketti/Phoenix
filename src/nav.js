@@ -8,6 +8,7 @@ document.addEventListener("scroll", function(){
       navBar.style.transform = "translateY(-100%)"
       
    } else if (ypos < scrollbuffer) {
+    //commit test
     //console.log("up")
       navbarVis = true
       navBar.style.transform = "translateY(0)"
