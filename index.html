@@ -3,20 +3,35 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Phoenix</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="images/Pheonix.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <style>
+      #navFriends {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: darkblue;
+        font-size: inherit;
+        font-family: inherit;
+        text-decoration: none;
+        background-image: url('images/Pheonix.jpg');
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
   </head>
   <body>
     <div id="navMouse" onmouseenter="navbarVis = true; navBar.style.transform = 'translateY(0%)'"></div>
     <nav id="navbar" onmouseleave="navbarVis = false; navBar.style.transform = 'translateY(-100%)'">
       <img src="images/Pheonix.jpg" id="navIcon">
-      <span><a href="index.html">Phoenix|</a></span>
+      <span><a href="index.html">Phoenix |</a></span>
       <!-- "Friends" button, same size, invisible background -->
-      <button id="navFriends" style="background: none; border: none; cursor: pointer; color: inherit; font-size: inherit;">Friends</button>
+      <a id="navFriends" href="#">Friends</a>
       <div id="NavProfile">
         <img src="images/Username.png" id="navPFP">
         <span id="navName">Guest</span>
