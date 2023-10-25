@@ -34,7 +34,7 @@ postsRef.on("child_added", function(snapshot) {
     for(let i=0;i<postText.length;i++)
     {
       let dontAppend = false
-      console.log(postText)
+      //console.log(postText)
       let textSection = document.createElement("span")
       if(postText[i] == "```")
       {
@@ -42,16 +42,39 @@ postsRef.on("child_added", function(snapshot) {
         isCodeOpen = !isCodeOpen
         if(isCodeOpen)
         {
-          //let preSection = document.createElement("pre")
-          //postContent.appendChild(preSection)
           codeSection = document.createElement("code")
+          let codeSegment = postText[i+1].split(/\n|\r|\t|\s|[```]/g)
+          codeSegment = postText[i+1].split(/(?=[\n|\r|\t|\s])|(?<=[/\n|\r|\t|\s])/g)
+          console.log(codeSegment)
+          
+          //if(codeSegment[0].match(/\n|\r|\t|\s/g))
+          //{
+            codeSection.classList.add(`language-${codeSegment[0]}`)
+            codeSegment.reverse()
+            codeSegment.pop()
+            codeSegment.reverse()
+            postText[i+1] = codeSegment.join("")
+            //codeSegment = codeSegment.join("")
+            //console.log(codeSegment)
+            //codeSegment.join('')
+            //for(let i=0;i<codeSegment.length;i++)
+            //{
+              //postText.splice(i+1,0,codeSegment)
+            //}
+            
+          //}
+         // console.log(postText[i+1].match(/\n|\r|\t|\s|[```]/g))
+         // console.log(postText)
           postContent.appendChild(codeSection)
+          
         }
+        hljs.highlightElement(codeSection)
+        //codeSection.innerHTML = codeSection.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
       }
       else if(isCodeOpen)
       {
         dontAppend = true
-        codeSection.innerText = postText[i]
+        codeSection.append(postText[i]) //+= postText[i]
       }
       else if((postText[i] || '').split(urlRegex).length > 1)
       {
@@ -66,14 +89,17 @@ postsRef.on("child_added", function(snapshot) {
             textSection.className = "PostPhoto"
           }
       }
+      //console.log(postText[i].match(/\n|\r|\t|\s/g))
+      
       
       if(!dontAppend)
       {
         postContent.appendChild(textSection)
         textSection.innerText = postText[i]
       }
+      
     }
-   
+   //console.log
     
     post.appendChild(postContent)
 
@@ -89,7 +115,7 @@ postsRef.on("child_added", function(snapshot) {
     postDate.innerText = dateString
     postDate.className = "PostDate"
     post.appendChild(postDate)
-    hljs.highlightAll()
+    
 })
 
 
