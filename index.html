@@ -9,16 +9,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="images/Pheonix.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   </head>
   <body>
     <div id="navMouse" onmouseenter="navbarVis = true; navBar.style.transform = 'translateY(0%)'"></div>
     <nav id="navbar" onmouseleave="navbarVis = false; navBar.style.transform = 'translateY(-100%)'">
       <img src="images/Pheonix.jpg" id="navIcon">
       <span><a href="index.html">Phoenix</a></span>
-      <button id="navPost" onclick="document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false; navBar.style.transform = 'translateY(-100%)'">Post</button>
-      <!-- "Friends" button added to the right of "Phoenix" -->
-      <button id="navFriends">Friends</button>
+      <!-- "Friends" button, same size, invisible background -->
+      <button id="navFriends" style="background: none; border: none; cursor: pointer; color: inherit; font-size: inherit;">Friends</button>
       <div id="NavProfile">
         <img src="images/Username.png" id="navPFP">
         <span id="navName">Guest</span>
