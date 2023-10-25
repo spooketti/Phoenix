@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--we're screwed-->
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,54 +8,67 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="images/Pheonix.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-<!-- and it's easy to individually load additional languages -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+    <style>
+      #navFriends {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: darkblue;
+        font-size: inherit;
+        font-family: inherit;
+        text-decoration: none;
+        background-image: url('images/Pheonix.jpg');
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
   </head>
   <body>
-    <div id="navMouse" onmouseenter="navbarVis = true;
-    navBar.style.transform = 'translateY(0%)'"></div>
-    <nav id="navbar" onmouseleave="navbarVis = false;
-    navBar.style.transform = 'translateY(-100%)'">
+    <div id="navMouse" onmouseenter="navbarVis = true; navBar.style.transform = 'translateY(0%)'"></div>
+    <nav id="navbar" onmouseleave="navbarVis = false; navBar.style.transform = 'translateY(-100%)'">
       <img src="images/Pheonix.jpg" id="navIcon">
-      <span><a href="index.html">Phoenix</a></span>
-      <button id="navPost" onclick="document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false;
-      navBar.style.transform = 'translateY(-100%)'">Post</button>
+      <span><a href="index.html">Phoenix |</a></span>
+      <!-- "Friends" button, same size, invisible background -->
+      <a id="navFriends" href="#">Friends</a>
+      <button id="navPost" onclick="document.getElementById('CreatePost').style display = 'flex'; navbarVis = false; navBar.style.transform = 'translateY(-100%)'">Post</button>
       <div id="NavProfile">
         <img src="images/Username.png" id="navPFP">
         <span id="navName">Guest</span>
       </div>
     </nav>
-        <div id="NavCol"><!--<p id="joke">f</p>--></div>
-        <div id="PostCol">
-          <div id="PostIntro">
-            <b>Home</b>
-          </div>
-          <div id="Posts">
+    <div id="NavCol"><!--<p id="joke">f</p>--></div>
+    <div id="PostCol">
+      <div id="PostIntro">
+        <b>Home</b>
+      </div>
+      <div id="Posts">
+        <!-- You can add your posts or content here -->
+      </div>
+    </div>
+    <div id="NewsCol"></div>
+    <div id="CreatePost">
+      <div id="ModalClose"></div>
+      <div id="PostPrompt">
+        <div id="PostHead">
+          <button style="background:none; border:none; cursor:pointer; color:white;" onclick="closeMenu()">X</button>
+          <span id="PostHeadUsername">Posting as Username</span>
+          <img id="PostHeadPFP" src="images/Pheonix.jpg">
         </div>
-        <div id = "NewsCol"></div>
-        <div id="CreatePost">
-          <div id="ModalClose"></div>
-          <div id="PostPrompt">
-              <div id="PostHead">
-                <button style="background:none; border:none; cursor:pointer; color:white;" onclick="closeMenu()">X</button>
-                <span id="PostHeadUsername">Posting as Username</span>
-                <img id="PostHeadPFP" src="images/Pheonix.jpg">
-              </div>
-              <div id="PostBody">
-                <textarea id="PostBodyInput"></textarea>
-              </div>
-              <div id="PostFooter">
-                <button id="PostFooterPostButton" onclick="submitPost()">Post</button>
-              </div>
-          </div>
+        <div id="PostBody">
+          <textarea id="PostBodyInput"></textarea>
         </div>
-        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-  <script src="src/post.js"></script>
-    <script src = "src/index.js"></script>
-    <script src = "src/nav.js"></script>
+        <div id="PostFooter">
+          <button id="PostFooterPostButton" onclick="submitPost()">Post</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="src/post.js"></script>
+    <script src="src/index.js"></script>
+    <script src="src/nav.js"></script>
     <script src="src/loadpost.js"></script>
   </body>
 </html>
