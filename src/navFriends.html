@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Profiles</title>
+    <link rel="stylesheet" href="style.css"> <!-- Add your Phoenix theme stylesheet -->
+    <link rel="icon" type="image/x-icon" href="images/Pheonix.jpg">
+</head>
+<body>
+    <h1>User Profiles</h1>
+    <div id="userDetails">
+        <!-- User profiles will be displayed here -->
+    </div>
+
+    <script>
+        const user_data = [
+            { name: "Sri", profile_picture: "images/SriPfp.jpg", age: 15, location: "San Diego" },
+            { name: "Soham", profile_picture: "images/SohamPfp.png", age: 15, location: "Ohio" },
+            { name: "Bortensen", profile_picture: "images/BortensenPfp.jpg", age: 40, location: "Hawaii" },
+            { name: "Sidhi", profile_picture: "images/SidhiPfp.jpg", age: 12, location: "New York" },
+            { name: "Gavin", profile_picture: "images/GavinPfp.jpg", age: 15, location: "Paris" }
+        ];
+
+        function displayUserProfiles() {
+            const userDetails = document.getElementById("userDetails");
+
+            user_data.forEach(profile => {
+                const userDiv = document.createElement("div");
+                userDiv.classList.add("profile-card"); // Add a CSS class for styling
+
+                // Create an image element for the profile picture
+                const profileImage = document.createElement("img");
+                profileImage.src = profile.profile_picture;
+                profileImage.alt = profile.name;
+                profileImage.style.maxWidth = "100px"; // Adjust the max width as needed
+
+                // Create a div for name and other details
+                const detailsDiv = document.createElement("div");
+                detailsDiv.innerHTML = `<strong>Name:</strong> ${profile.name}<br><strong>Age:</strong> ${profile.age}<br><strong>Location:</strong> ${profile.location}`;
+
+                // Append the image and details to the userDiv
+                userDiv.appendChild(profileImage);
+                userDiv.appendChild(detailsDiv);
+
+                userDetails.appendChild(userDiv);
+            });
+        }
+
+        displayUserProfiles();
+    </script>
+</body>
+</html>
