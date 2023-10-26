@@ -14,9 +14,9 @@
     <div id="navMouse" onmouseenter="navbarVis = true; navBar.style.transform = 'translateY(0%)'"></div>
     <nav id="navbar" onmouseleave="navbarVis = false; navBar.style.transform = 'translateY(-100%)'">
       <img src="images/Pheonix.jpg" id="navIcon">
-      <a href="index.html">Phoenix |</a>
+      <a href="index.html">Phoenix</a>
       <!-- "Friends" button, same size, invisible background -->
-      <button id="navFriends" href="#">Friends</button>
+      <button id="navFriends" onclick="window.location.href='navFriends.html'">Friends</button>
       <button id="navPost" onclick="document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false; navBar.style.transform = 'translateY(-100%)'">Post</button>
       <div id="NavProfile">
         <img src="images/Username.png" id="navPFP">
