@@ -1,4 +1,5 @@
 const postsRef = db.ref("Posts/")
+//console.log(env.API_KEY)
 let urlRegex = /(https?:\/\/[^\s]+)/g; //just detects links
 let tildaRegex = /(```)/; //code block opener regex
 //let postRegex = /(https?:\/\/[^\s]+)|(```)/g
@@ -45,7 +46,7 @@ postsRef.on("child_added", function(snapshot) {
           codeSection = document.createElement("code")
           let codeSegment = postText[i+1].split(/\n|\r|\t|\s|[```]/g)
           codeSegment = postText[i+1].split(/(?=[\n|\r|\t|\s])|(?<=[/\n|\r|\t|\s])/g)
-          console.log(codeSegment)
+          //console.log(codeSegment)
           
           //if(codeSegment[0].match(/\n|\r|\t|\s/g))
           //{
