@@ -217,7 +217,7 @@ html,body
     height: 80%;
     width: 30%;
     position: relative;
-    left: 35%;
+    left: 3%;
     color:black;
     border:none;
     font-size: xx-large;
@@ -421,3 +421,34 @@ pre
     height:100%;
     width:100%;
 }
+
+#nasIm
+{
+    height:auto;
+    width:100%;
+}
+
+#navFriends {
+    background-color: orange;
+    border-radius: 10% / 80%;
+    height: 80%;
+    width: 30%;
+    position: relative;
+    left: 1%;
+    color:black;
+    border:none;
+    font-size: xx-large;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .5s;
+  }
+
+  #navFriends:hover
+  {
+      background-color: rgb(255, 102, 0);
+      color:white;
+  }
+  
+  #navFriends:active
+  {
+      filter:brightness(50%);
+  }

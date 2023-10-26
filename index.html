@@ -5,39 +5,25 @@
     <meta name="viewport" content="width device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Phoenix</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image x-icon" href="images/Pheonix.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
-    <style>
-      #navFriends {
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: darkblue;
-        font-size: 0.80em; /* Slightly smaller font size */
-        font-family: inherit;
-        text-decoration: none;
-        background-image: url('images/Pheonix.jpg');
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    </style>
   </head>
   <body>
     <div id="navMouse" onmouseenter="navbarVis = true; navBar.style.transform = 'translateY(0%)'"></div>
     <nav id="navbar" onmouseleave="navbarVis = false; navBar.style.transform = 'translateY(-100%)'">
       <img src="images/Pheonix.jpg" id="navIcon">
-      <span><a href="index.html">Phoenix |</a></span>
+      <a href="index.html">Phoenix |</a>
       <!-- "Friends" button, same size, invisible background -->
-      <a id="navFriends" href="./src/navFriends.html">Friends |</a>
+      <button id="navFriends" href="#">Friends</button>
       <button id="navPost" onclick="document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false; navBar.style.transform = 'translateY(-100%)'">Post</button>
       <div id="NavProfile">
         <img src="images/Username.png" id="navPFP">
         <span id="navName">Guest</span>
       </div>
     </nav>
-    <div id="NavCol"><!--<p id="joke">f</p>--></div>
+    <div id="NavCol"><img id="nasIm"></div>
     <div id="PostCol">
       <div id="PostIntro">
         <b>Home</b>
@@ -85,5 +71,6 @@
     <script src="src/index.js"></script>
     <script src="src/nav.js"></script>
     <script src="src/loadpost.js"></script>
+    <script src="src/nasa.js"></script>
   </body>
 </html>
