@@ -47,6 +47,21 @@
         <div id="PostFooter">
           <button id="PostFooterPostButton" onclick="submitPost()">Post</button>
         </div>
+        <head>
+          <title>Help Button</title>
+        </head>
+        <body>
+            <button id="helpButton">Help</button>
+            <p id="message" style="display: none;">If you want to paste a link, just paste the link and it will link</p>
+            <p id="message" style="display: none;">Make sure if you want to post an image, you make the link end with "".jpg"</p>
+  
+  
+            <script>
+                // JavaScript code to show the message when the button is clicked
+                document.getElementById("helpButton").addEventListener("click", function() {
+                    document.getElementById("message").style.display = "block";
+                });
+            </script>
       </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
