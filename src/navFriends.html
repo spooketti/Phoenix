@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User Profiles</title>
+    <link rel="stylesheet" href="style.css"> <!-- Add your Phoenix theme stylesheet -->
+    <link rel="icon" type="image/x-icon" href="images/Pheonix.jpg">
 </head>
 <body>
     <h1>User Profiles</h1>
@@ -21,40 +23,32 @@
             { name: "Gavin", profile_picture: "images/GavinPfp.jpg", age: 15, location: "Paris" }
         ];
 
-        function generateUserProfiles(numProfiles) {
-            const userProfiles = [];
+        function displayUserProfiles() {
+            const userDetails = document.getElementById("userDetails");
 
-            for (let i = 0; i < numProfiles; i++) {
-                const randomUser = user_data[Math.floor(Math.random() * user_data.length)];
-                userProfiles.push(randomUser);
-            }
+            user_data.forEach(profile => {
+                const userDiv = document.createElement("div");
+                userDiv.classList.add("profile-card"); // Add a CSS class for styling
 
-            return userProfiles;
+                // Create an image element for the profile picture
+                const profileImage = document.createElement("img");
+                profileImage.src = profile.profile_picture;
+                profileImage.alt = profile.name;
+                profileImage.style.maxWidth = "100px"; // Adjust the max width as needed
+
+                // Create a div for name and other details
+                const detailsDiv = document.createElement("div");
+                detailsDiv.innerHTML = `<strong>Name:</strong> ${profile.name}<br><strong>Age:</strong> ${profile.age}<br><strong>Location:</strong> ${profile.location}`;
+
+                // Append the image and details to the userDiv
+                userDiv.appendChild(profileImage);
+                userDiv.appendChild(detailsDiv);
+
+                userDetails.appendChild(userDiv);
+            });
         }
 
-        const userDetails = document.getElementById("userDetails");
-
-        const randomProfiles = generateUserProfiles(1);
-
-        randomProfiles.forEach(profile => {
-            const userDiv = document.createElement("div");
-
-            // Create an image element for the profile picture
-            const profileImage = document.createElement("img");
-            profileImage.src = profile.profile_picture;
-            profileImage.alt = profile.name;
-            profileImage.style.maxWidth = "100px"; // Adjust the max width as needed
-
-            // Create a div for name and other details
-            const detailsDiv = document.createElement("div");
-            detailsDiv.innerHTML = `<strong>Name:</strong> ${profile.name}<br><strong>Age:</strong> ${profile.age}<br><strong>Location:</strong> ${profile.location}`;
-
-            // Append the image and details to the userDiv
-            userDiv.appendChild(profileImage);
-            userDiv.appendChild(detailsDiv);
-
-            userDetails.appendChild(userDiv);
-        });
+        displayUserProfiles();
     </script>
 </body>
 </html>
