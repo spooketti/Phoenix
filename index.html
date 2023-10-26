@@ -17,6 +17,7 @@
       <a href="index.html">Phoenix</a>
       <!-- "Friends" button, same size, invisible background -->
       <button id="navFriends" onclick="window.location.href='navFriends.html'">Friends</button>
+      <button id="help" onclick="window.location.href='Help.html'">Help</button>
       <button id="navPost" onclick="document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false; navBar.style.transform = 'translateY(-100%)'">Post</button>
       <div id="NavProfile">
         <img src="images/Username.png" id="navPFP">
@@ -47,22 +48,7 @@
         <div id="PostFooter">
           <button id="PostFooterPostButton" onclick="submitPost()">Post</button>
         </div>
-        <head>
-          <title>Help Button</title>
-        </head>
-        <body>
-            <button id="helpButton">Help</button>
-            <p id="message" style="display: none;">If you want to paste a link, just paste the link and it will link</p>
-            <p id="message" style="display: none;">Make sure if you want to post an image, you make the link end with "".jpg"</p>
-  
-  
-            <script>
-                // JavaScript code to show the message when the button is clicked
-                document.getElementById("helpButton").addEventListener("click", function() {
-                    document.getElementById("message").style.display = "block";
-                    document.getElementById("message").style.display = "block";
-                });
-            </script>
+        
       </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
