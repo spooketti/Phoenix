@@ -1,5 +1,6 @@
-const auth = firebase.auth()
-  
+
+  let emailPrompt = document.getElementById("UsernamePrompt")
+  let pwPrompt = document.getElementById("PasswordPrompt")
   const provide = new firebase.auth.GoogleAuthProvider();
   function signInWithGoogle() 
     {
@@ -21,13 +22,10 @@ const auth = firebase.auth()
         firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in 
-      var user = userCredential.user;
+      window.location.href = "./index.html"
       // ...
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ..
+    }).catch((error) => {
+      logInWithEmail(email,password)
     });
     }
 
@@ -35,26 +33,35 @@ const auth = firebase.auth()
     {
         firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    // ...
+    window.location.href = "./index.html"
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
+    console.log("i hate you")
   });
     }
 
     function signInAnon()
     {
         firebase.auth().signInAnonymously()
-  .then(() => {
-    // Signed in..
+  .then((userCredential) => {
+    window.location.href = "./index.html"
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
     // ...
   });
+
     }
     
+
+    //setTimeout(() => {
+      document.getElementById("loginMenu").style.filter = "blur(0px)"
+    //}, 1000);
+
+    function emPW() //email password
+    {
+        signUpWithEmail(emailPrompt.value, pwPrompt.value)
+    }

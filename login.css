@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+html,body
+{
+    height:100%;
+    width: 100%;
+    overflow-x: clip;
+    font-family: 'Montserrat', sans-serif;
+    color:white;
+}
+
+#loginWrapper
+{
+    position: fixed;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginMenu
+{
+    width:30%;
+    aspect-ratio: 1/1.2;
+    background: rgba(0, 0, 0, 0.071);
+    background: radial-gradient(circle, rgba(0,0,0,.4) 0%, rgba(51,31,2,.4) 35%, rgba(21, 21, 21, 0.4) 100%);
+    border-radius: 5% 7%;
+    border: 2px rgba(255, 255, 255, 0.5) solid;
+    transition: all 1s;
+    filter: blur(50px);
+    padding: 1%;
+}
+
+@keyframes textShine {
+    to{
+        background-position: 200%;
+    }
+}
+
+#loginMenu:active, .LoginPrompt:focus
+{
+    border: 2px rgba(255, 255, 255, 1) solid;
+}
+
+#loginTitle
+{
+    display: flex;
+    justify-content: center;
+    height:fit-content;
+    width:100%;
+    align-items: center;
+    color:white;
+    text-decoration: none;
+    background:linear-gradient(to right, orange 20%, #c16f04 30%, #d39b03 70%, orange 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: textShine 7s ease-in-out infinite;
+    gap:1%;
+    position: relative;
+    top:1%;
+    font-size: xx-large;
+}
+#loginTitle img
+{
+    width:15%;
+    height:auto;
+}
+
+#loginText
+{
+    display: flex;
+    justify-content: center;
+    color:white;
+}
+
+.LoginPrompt
+{
+ background-color: unset;
+ font-family: 'Montserrat', sans-serif;
+ width:100%;
+ color:white;
+ transition:all .5s;
+ border:none;
+}
+
+
+
+
+
+.AltLogin
+{
+    display: flex;
+    align-items: center;
+    width:75%;
+    justify-content: space-between;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: x-large;
+    background: #ffd7a4;
+    height:120%;
+    transition: all .1s;
+}
+
+.AltLogin:hover:not(#registerButton)
+{
+    background: linear-gradient(to right, #ffd7a4 20%, #ffcd8b 30%, #fbb252 70%, #ffd7a4 80%);
+    animation: textShine 10s linear infinite;
+    background-size: 200% auto;
+}
+
+.AltLogin:active
+{
+    filter:brightness(50%)
+}
+
+.AltLogin img
+{
+    width:10%;
+    filter: 
+    drop-shadow(-1px -1px 0px #000000) 
+    drop-shadow(1px -1px 0px #000000) 
+    drop-shadow(1px 1px 0px #000)
+    drop-shadow(-1px 1px 0px #000)
+}
+
+#AltOptions
+{
+    display: grid;
+    justify-items: center;
+}
+
+.PromptWrapper
+{
+    border-bottom: white solid 2px;
+}
+
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+#registerButton
+{
+    background-color: rgb(138, 255, 138);
+}
+
+#registerButton:hover
+{
+    filter:brightness(80%);
+}
+
+#registerButton:active
+{
+    filter:brightness(50%);
+}

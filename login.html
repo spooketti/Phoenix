@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phoenix</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="image x-icon" href="images/Pheonix.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+  </head>
+  <body>
+    <div id="loginWrapper">
+        <div id="loginMenu">
+            <div id="loginTitle"><img src="images/icon.png">Phoenix</div>
+           <br>
+           <div id="loginText"><h1>Login To Phoenix</h1></div>
+           <div id="UsernamePromptWrapper" class="PromptWrapper">
+            <span class="PromptLabel">Email</span>
+            <br>
+            <input id="UsernamePrompt" type="search" class="LoginPrompt">
+           </div>
+           
+           <br>
+           <div id="PasswordPromptWrapper" class="PromptWrapper">
+            <span class="PromptLabel">Password</span>
+            <br>
+            <input id="PasswordPrompt" type="password" class="LoginPrompt">
+           </div>
+           <br>
+           <div id="AltOptions">
+           <button class="AltLogin" onclick="signInWithGoogle()"><img src="https://d35aaqx5ub95lt.cloudfront.net/images/7da752378a3b1b8bbcd94a4d4f10561e.svg"> Google <span></span></button>
+           <br>
+           <button class="AltLogin" onclick="signInAnon()"><img src="https://www.svgrepo.com/show/105517/user-icon.svg"> Guest <span></span></button>
+           <br>
+           <button id="registerButton" onclick="emPW()" class="AltLogin"><span></span> Log In <span></span></button>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="src/dbLoad.js"></script>
+    <script src="src/nasa.js"></script>
+    <script src="src/login.js"></script>
+  </body>
+</html>
