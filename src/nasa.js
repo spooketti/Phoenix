@@ -4,7 +4,8 @@ var api_key = "U1Log8NeUnLqV03SBUbjcP61fEHF10YuDeUA9KGm";
 var img_type = ".png";
 var date = "2023-09-13"
 
-req.open("GET", url + api_key + "&date="  + date);
+//"&date="  + date
+req.open("GET", url + api_key);
 req.send();
 
 req.addEventListener("load", function(){
