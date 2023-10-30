@@ -60,10 +60,18 @@
     </div>
     </div>
     <div id="editProfile">
-      <div></div>
+      <textarea id="changeField" placeholder="Type Changes Here"></textarea>
+      <button id="CloseEditProf" onclick="editProfileMenu()">X</button>
       <img id="editPFP" src="images/dogsit.jpg">
-      <h1 id="UsernameEditProf">Username</h1>
-      <h3 id="HandleEditProf">Error Please Report</h3>
+      <h1 id="UsernameEditProf">Username </h1><button class="ProfEditButton" onclick="editAspect('Username')">Edit</button>
+      <br>
+      <h3 id="HandleEditProf">Error Please Report </h3>
+      <br>
+      <br>
+      <button class="ProfEditButton" onclick="applyAspect()">Apply All Changes</button>
+      <br>
+      <br>
+      <button class="ProfEditButton" onclick="auth.signOut()">Sign Out</button>
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>

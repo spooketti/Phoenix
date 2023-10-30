@@ -9,7 +9,7 @@ let tildaRegex = /(```)/; //code block opener regex
 let PostCol = document.getElementById("Posts")
 postsRef.on("child_added", function(snapshot) {
     const dbPost = snapshot.val();
-    let Username = "Jon"
+    let Username = dbPost.username
     let post = document.createElement("div")
     post.className = "Post"
     PostCol.insertBefore(post,PostCol.firstChild)
@@ -24,7 +24,7 @@ postsRef.on("child_added", function(snapshot) {
     userHold.appendChild(pfp)
 
     let usernameAnchor = document.createElement("a")
-    usernameAnchor.innerText = "Username" //temp
+    usernameAnchor.innerText = Username
     usernameAnchor.href = `profile.html?Name=${Username}`
     userHold.appendChild(usernameAnchor)
 
