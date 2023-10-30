@@ -68,7 +68,7 @@ function applyAspect()
               })
         navName.innerText = newname
         usernameEditProf.innerText = newname
-        postHeadUsername.innerText = newname
+        postHeadUsername.innerText = `Posting As ${newname}`
         break;
     }
     
