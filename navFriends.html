@@ -13,7 +13,32 @@
     <div id="userDetails">
         <!-- User profiles will be displayed here -->
     </div>
+    <style>
+        #userDetails {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
+        .profile-card {
+            width: 48%; /* Adjust the width as needed */
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Profiles</h1>
+    <div id="userDetails">
+        <div id="top-row">
+            <!-- User profiles for the top row will be displayed here -->
+        </div>
+        <div id="middle-row">
+            <!-- User profiles for the middle row will be displayed here -->
+        </div>
+    </div>
     <script>
         const user_data = [
             { name: "Sri", profile_picture: "images/SriPfp.jpg", age: 15, location: "San Diego" },
