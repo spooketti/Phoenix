@@ -7,12 +7,6 @@
     <title>User Profiles</title>
     <link rel="stylesheet" href="style.css"> <!-- Add your Phoenix theme stylesheet -->
     <link rel="icon" type="image/x-icon" href="images/Pheonix.jpg">
-</head>
-<body>
-    <h1>User Profiles</h1>
-    <div id="userDetails">
-        <!-- User profiles will be displayed here -->
-    </div>
     <style>
         #userDetails {
             display: flex;
@@ -30,13 +24,9 @@
     </style>
 </head>
 <body>
+    <h1>User Profiles</h1>
     <div id="userDetails">
-        <div id="top-row">
-            <!-- User profiles for the top row will be displayed here -->
-        </div>
-        <div id="middle-row">
-            <!-- User profiles for the middle row will be displayed here -->
-        </div>
+        <!-- User profiles will be displayed here -->
     </div>
     <script>
         const user_data = [
@@ -45,7 +35,7 @@
             { name: "Bortensen", profile_picture: "images/BortensenPfp.jpg", age: 40, location: "Hawaii" },
             { name: "FroggyNampali", profile_picture: "images/FroggyPfp.jpg", age: 15, location: "New York" },
             { name: "Gavin", profile_picture: "images/GavinPfp.jpg", age: 15, location: "Paris" }
-        ];
+        ]; // Closing the user_data array
 
         function displayUserProfiles() {
             const userDetails = document.getElementById("userDetails");
