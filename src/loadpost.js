@@ -1,4 +1,7 @@
 const postsRef = db.ref("Posts/")
+
+//db.ref("Posts/timestamp").value = ""
+
 //console.log(env.API_KEY)
 let urlRegex = /(https?:\/\/[^\s]+)/g; //just detects links
 let tildaRegex = /(```)/; //code block opener regex
@@ -106,6 +109,7 @@ postsRef.on("child_added", function(snapshot) {
 
     let postDate = document.createElement("span")
     let dateString = new Date(dbPost.timestamp)
+    post.dataset.timestamp = dbPost.timestamp
 
     const dd = String(dateString.getDate()).padStart(2, '0');
     const mm = String(dateString.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -124,3 +128,4 @@ postsRef.on("child_added", function(snapshot) {
 function urlify(text) {
   return text.split(urlRegex).flatMap(part => part.split(tildaRegex));
 }
+

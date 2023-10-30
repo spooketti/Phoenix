@@ -7,7 +7,7 @@
     <title>Phoenix</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image x-icon" href="images/Pheonix.jpg">
+    <link rel="icon" type="image x-icon" href="images/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
   </head>
   <body>
@@ -18,8 +18,8 @@
       <!-- "Friends" button, same size, invisible background -->
       <button id="navFriends" onclick="window.location.href='navFriends.html'">Friends</button>
       <button id="help" onclick="window.location.href='Help.html'">Help</button>
-      <button id="navPost" onclick="document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false; navBar.style.transform = 'translateY(-100%)'">Post</button>
-      <div id="NavProfile">
+      <button id="navPost" onclick="if(!activeUser.displayName){noUsernameError();return;};document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false; navBar.style.transform = 'translateY(-100%)'">Post</button>
+      <div id="NavProfile" onclick="editProfileMenu()">
         <img src="images/Username.png" id="navPFP">
         <span id="navName">Guest</span>
       </div>
@@ -51,6 +51,20 @@
         
       </div>
     </div>
+    <div id="notifModal">
+      <div id="notifBlock">
+        <h1 id="notifTitle">error</h1>
+      <p id="notifContent">pls report</p>
+      <button id="notifClose" onclick="document.getElementById('notifModal').style.display = 'none'">Close</button>
+      </div>
+    </div>
+    </div>
+    <div id="editProfile">
+      <div></div>
+      <img id="editPFP" src="images/dogsit.jpg">
+      <h1 id="UsernameEditProf">Username</h1>
+      <h3 id="HandleEditProf">Error Please Report</h3>
+    </div>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
@@ -59,6 +73,7 @@
     <script src="src/index.js"></script>
     <script src="src/nav.js"></script>
     <script src="src/loadpost.js"></script>
+    <script src="src/profile.js"></script>
    <!-- <script src="src/nasa.js"></script> -->
   </body>
 </html>
