@@ -132,12 +132,13 @@ postsRef.on("child_added", function(snapshot) {
 })
 
 function likePost(timeID, postData){
-  console.log(postData)
-  console.log(firebase.dataBase().ref("Posts/" + timeID).message)
-  // To modify later
-  // db.ref("Posts/" + timeID).set({
-  //   likes: db.ref("Posts/" + timeID).likes += 1
-  // })
+  console.log(postData.likes)
+  firebase.database().ref("Posts/" + String(timeID)).set({
+    message: postData.message,
+    timestamp: timeID,
+    likes: parseInt(postData.likes + 1)
+  })
+  console.log(postData.likes)
 }
 
 function urlify(text) {
