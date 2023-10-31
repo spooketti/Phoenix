@@ -13,17 +13,31 @@
     <h3>Images: Make sure if you want to post an image, you make the link end with ".jpg"</h3>
     <h3>Link: Add the link to the post to link a website</h3>
     <h3>Code format:</h3>
-    <h4>'''(Write your programming language)</h4>
+    <h4>```(Write your programming language)</h4>
     <h4>your code</h4>
-    <h4>'''</h4>
+    <h4>```</h4>
     <button id="showexample">Example</button>
-        <div id="image-container">
-            <img id="my-image" src="code_example.jpg" alt="Image">
-            <img id="my-image" src="code_result.jpg" alt="Image">
-
-        </div>
+    <div id="image-container" style="display: none;">
+        <img id="example-image" src="code_example.jpg" alt="Example Image">
+        <img id="result-image" src="code_result.jpg" alt="Result Image">
+    </div>
     <h3>Click the Friend page at the top bar to view your friends</h3>
     <h3></h3>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const showExampleButton = document.getElementById('showexample');
+            const imageContainer = document.getElementById('image-container');
+
+            showExampleButton.addEventListener('click', function () {
+                // Toggle the image container's visibility
+                if (imageContainer.style.display === 'none') {
+                    imageContainer.style.display = 'block';
+                } else {
+                    imageContainer.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
