@@ -36,13 +36,15 @@ function submitPost()
     const timestamp = Date.now();
     let message = document.getElementById("PostBodyInput").value
     let likes = 0
+    let username = auth.currentUser.displayName
     if (!/\S/.test(message)) { //white space
       return
     }
     db.ref("Posts/" + timestamp).set({
         message,
         timestamp,
-        likes
+        likes,
+        username
       });
     hidePostMenu()
     navBar.style.transform = 'translateY(0%)'

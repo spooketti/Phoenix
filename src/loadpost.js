@@ -6,10 +6,10 @@ let tildaRegex = /(```)/; //code block opener regex
 let PostCol = document.getElementById("Posts")
 postsRef.on("child_added", function(snapshot) {
     const dbPost = snapshot.val();
-    let Username = "Jon"
+    let Username = dbPost.username
     let post = document.createElement("div")
     post.className = "Post"
-    PostCol.insertBefore(post,PostCol.firstChild)
+    PostCol.insertBefore(post, PostCol.firstChild)
     
     let userHold = document.createElement("div")
     userHold.className = "UserHold"
@@ -21,12 +21,13 @@ postsRef.on("child_added", function(snapshot) {
     userHold.appendChild(pfp)
 
     let usernameAnchor = document.createElement("a")
-    usernameAnchor.innerText = "Username" //temp
+    usernameAnchor.innerText = Username
     usernameAnchor.href = `profile.html?Name=${Username}`
     userHold.appendChild(usernameAnchor)
 
     let postContent = document.createElement("pre")
     let postText = urlify(dbPost.message)//(dbPost.message).split(tildaRegex)
+    console.log(dbPost.likes)
     //console.log(postText)
     //postText = urlify(postText)
     let isCodeOpen = false
@@ -34,6 +35,7 @@ postsRef.on("child_added", function(snapshot) {
     postText = postText.filter(elm => elm)
     for(let i=0;i<postText.length;i++)
     {
+      console.log(postText[i])
       let dontAppend = false
       //console.log(postText)
       let textSection = document.createElement("span")
@@ -96,7 +98,7 @@ postsRef.on("child_added", function(snapshot) {
       if(!dontAppend)
       {
         postContent.appendChild(textSection)
-        textSection.innerText = postText[i]
+        textSection.innerText = String(postText[i])
       }
       
     }
@@ -111,15 +113,32 @@ postsRef.on("child_added", function(snapshot) {
     const mm = String(dateString.getMonth() + 1).padStart(2, '0'); //January is 0!
     const yyyy = dateString.getFullYear();
   
+    let likeRow = document.createElement("div")
+    let likes = document.createElement("span")
+    let likeButton = document.createElement("button")
+    likeButton.innerHTML = "Like"
+    likeButton.onclick = function(){likePost(dbPost.timestamp, dbPost)}
+
+  
+    likes.innerText = "Likes: " + String(dbPost.likes) + "\n"
     let time =  dateString.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
     dateString = mm + '/' + dd + '/' + yyyy + " at " + time;
     postDate.innerText = dateString
     postDate.className = "PostDate"
-    post.appendChild(postDate)
+    likeRow.appendChild(likes)
+    likeRow.appendChild(likeButton)
+    post.appendChild(likeRow)
     
 })
 
-
+function likePost(timeID, postData){
+  console.log(postData)
+  console.log(firebase.dataBase().ref("Posts/" + timeID).message)
+  // To modify later
+  // db.ref("Posts/" + timeID).set({
+  //   likes: db.ref("Posts/" + timeID).likes += 1
+  // })
+}
 
 function urlify(text) {
   return text.split(urlRegex).flatMap(part => part.split(tildaRegex));
