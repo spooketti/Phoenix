@@ -125,8 +125,11 @@ postsRef.on("child_added", function(snapshot) {
     dateString = mm + '/' + dd + '/' + yyyy + " at " + time;
     postDate.innerText = dateString
     postDate.className = "PostDate"
-    likeRow.appendChild(likes)
+    likeButton.style.float = "Left"
+    likes.style.float = "Left"
+    likeRow.style.display = "inline-block"
     likeRow.appendChild(likeButton)
+    likeRow.appendChild(likes)
     post.appendChild(likeRow)
     
 })
