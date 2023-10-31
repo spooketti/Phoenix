@@ -117,7 +117,6 @@ postsRef.on("child_added", function(snapshot) {
     let likes = document.createElement("span")
     let likeButton = document.createElement("button")
     likeButton.innerHTML = "Like"
-    likeButton.style.float = "Left"
     // likeButton.style.display = "inline-block"
     likes.style.float = "Left"
     // likes.style.display = "inline-block"
