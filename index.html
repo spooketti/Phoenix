@@ -17,17 +17,19 @@
       <a href="index.html">Phoenix</a>
       <!-- "Friends" button, same size, invisible background -->
       <button id="navFriends" onclick="window.location.href='navFriends.html'">Friends</button>
-      <button id="help" onclick="window.location.href='Help.html'">Help</button>
       <button id="navPost" onclick="if(!activeUser.displayName){noUsernameError();return;};document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false; navBar.style.transform = 'translateY(-100%)'">Post</button>
       <div id="NavProfile" onclick="editProfileMenu()">
         <img src="images/Username.png" id="navPFP">
         <span id="navName">Guest</span>
       </div>
     </nav>
+    <div style = "position: fixed; right: 40px; bottom: 40px; z-index:2">
+      <button id="help" onclick="window.location.href='Help.html'">Help</button>
+    </div>
     <div id="NavCol"><img id="nasIm"></div>
     <div id="PostCol">
       <div id="PostIntro">
-        <b>Home</b>
+        <b>Home</b> 
       </div>
       <div id="Posts">
         <!-- You can add your posts or content here -->
