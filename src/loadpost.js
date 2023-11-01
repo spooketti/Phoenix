@@ -139,7 +139,9 @@ function likePost(timeID, postData){
   firebase.database().ref("Posts/" + String(timeID)).set({
     message: postData.message,
     timestamp: timeID,
-    likes: parseInt(postData.likes) + 1
+    likes: parseInt(postData.likes) + 1,
+    username: postData.username,
+    handle: postData.handle
   })
   console.log(postData.likes)
 }
