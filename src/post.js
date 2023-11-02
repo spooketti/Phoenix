@@ -37,22 +37,40 @@ function submitPost()
     let message = document.getElementById("PostBodyInput").value
     let likes = 0
     let username = auth.currentUser.displayName
-    let handle = auth.currentUser.email.split("@")
-    handle = handle[0]
-    if (!/\S/.test(message)) { //white space
-      return
-    }
-    db.ref("Posts/" + timestamp).set({
-        message,
-        timestamp,
-        likes,
-        username,
-        handle
+    try{
+       let handle = auth.currentUser.email.split("@")
+       handle = handle[0]
+       if (!/\S/.test(message)) { //white space
+         return
+       }
+       db.ref("Posts/" + timestamp).set({
+           message,
+           timestamp,
+           likes,
+           username,
+           handle
+         });
+       hidePostMenu()
+       navBar.style.transform = 'translateY(0%)'
+       //console.log("Post was submited")
+       document.getElementById("PostBodyInput").value = ""
+    } catch(e) {
+      handle = null
+      if (!/\S/.test(message)) { //white space
+          return
+      }
+      db.ref("Posts/" + timestamp).set({
+          message,
+          timestamp,
+          likes,
+          username,
+          handle
       });
-    hidePostMenu()
-    navBar.style.transform = 'translateY(0%)'
-    //console.log("Post was submited")
-    document.getElementById("PostBodyInput").value = ""
+      hidePostMenu()
+      navBar.style.transform = 'translateY(0%)'
+      //console.log("Post was submited")
+      document.getElementById("PostBodyInput").value = ""  
+    }
 }
 
 function hidePostMenu()
