@@ -583,3 +583,9 @@ pre
     color:rgb(183, 183, 183);
     font-size:medium;
 }
+
+.handle
+{
+    color:gray;
+    font-size: small;
+}

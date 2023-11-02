@@ -24,6 +24,13 @@ postsRef.on("child_added", function(snapshot) {
     usernameAnchor.innerText = Username
     usernameAnchor.href = `profile.html?Name=${Username}`
     userHold.appendChild(usernameAnchor)
+    let handle = dbPost.handle
+    let handleSpan = document.createElement("span")
+    handleSpan.innerText = "@" + handle
+    usernameAnchor.appendChild(document.createElement("br"))
+    usernameAnchor.appendChild(handleSpan)
+    handleSpan.className = "handle"
+    
 
     let postContent = document.createElement("pre")
     let postText = urlify(dbPost.message)//(dbPost.message).split(tildaRegex)
