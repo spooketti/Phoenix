@@ -122,7 +122,7 @@ postsRef.on("child_added", function(snapshot) {
     likeButton.onclick = function(){likePost(dbPost.timestamp, dbPost)} 
 
   
-    likes.innerText = String(dbPost.likes) + likes + "\n"
+    likes.innerText = String(dbPost.likes) + " likes" + "\n"
     let time =  dateString.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
     dateString = mm + '/' + dd + '/' + yyyy + " at " + time;
     postDate.innerText = dateString
