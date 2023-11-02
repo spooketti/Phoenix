@@ -27,7 +27,7 @@ postsRef.on("child_added", function(snapshot) {
 
     let postContent = document.createElement("pre")
     let postText = urlify(dbPost.message)//(dbPost.message).split(tildaRegex)
-    console.log(dbPost.likes)
+    //console.log(dbPost.likes)
     //console.log(postText)
     //postText = urlify(postText)
     let isCodeOpen = false
@@ -35,10 +35,11 @@ postsRef.on("child_added", function(snapshot) {
     postText = postText.filter(elm => elm)
     for(let i=0;i<postText.length;i++)
     {
-      console.log(postText[i])
+      //console.log(postText[i])
       let dontAppend = false
       //console.log(postText)
       let textSection = document.createElement("span")
+      textSection.className = "message"
       if(postText[i] == "```")
       {
         dontAppend = true
@@ -115,9 +116,10 @@ postsRef.on("child_added", function(snapshot) {
   
     let likeRow = document.createElement("div")
     let likes = document.createElement("span")
+    likes.className = "likes"
     let likeButton = document.createElement("button")
-    likeButton.innerHTML = "Like"
-    likeButton.onclick = function(){likePost(dbPost.timestamp, dbPost)}
+    likeButton.innerText = "Like" //remember, .innerHTML should be avoided when possible
+    likeButton.onclick = function(){likePost(dbPost.timestamp, dbPost)} 
 
   
     likes.innerText = "Likes: " + String(dbPost.likes) + "\n"
@@ -125,25 +127,28 @@ postsRef.on("child_added", function(snapshot) {
     dateString = mm + '/' + dd + '/' + yyyy + " at " + time;
     postDate.innerText = dateString
     postDate.className = "PostDate"
-    likeButton.style.float = "Left"
-    likes.style.float = "Left"
-    likeRow.style.display = "inline-block"
-    likeRow.appendChild(likeButton)
+    likeRow.appendChild(postDate)
     likeRow.appendChild(likes)
+    likeRow.appendChild(likeButton)
     post.appendChild(likeRow)
-    
+    post.id = dbPost.timestamp
 })
 
 function likePost(timeID, postData){
-  console.log(postData.likes)
-  firebase.database().ref("Posts/" + String(timeID)).set({
-    message: postData.message,
-    timestamp: timeID,
+  //console.log(postData.likes)
+  firebase.database().ref("Posts/" + String(timeID)).update({
+    //message: postData.message,
+    //timestamp: timeID,
     likes: parseInt(postData.likes) + 1
   })
-  console.log(postData.likes)
 }
 
 function urlify(text) {
   return text.split(urlRegex).flatMap(part => part.split(tildaRegex));
 }
+
+postsRef.on('child_changed', function(snapshot){
+  let dbPost = snapshot.val()
+  let timestamp = dbPost.timestamp
+  document.getElementById(timestamp).querySelector(".likes").innerText = `Likes: ${dbPost.likes}\n`
+});
