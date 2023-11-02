@@ -15,3 +15,11 @@ req.addEventListener("load", function(){
     document.getElementById("loginWrapper").style.backgroundImage = `url(${response.hdurl})`
   }
 })
+
+/*
+fetch("http://localhost:8005/api/nasa",{method:"GET"})
+.then(response => response.json())  
+.then(json => {
+  document.getElementById("loginWrapper").style.backgroundImage = `url(${json.hdurl})`
+})
+*/

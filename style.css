@@ -577,3 +577,9 @@ pre
     transform: translateY(-100%);
     transition: all .5s;
 }
+
+.likes
+{
+    color:rgb(183, 183, 183);
+    font-size:medium;
+}
