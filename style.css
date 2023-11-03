@@ -589,3 +589,104 @@ pre
     color:gray;
     font-size: small;
 }
+
+#profChange
+{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    filter:opacity(0%);
+}
+
+#profChangeContent textarea
+{
+    resize: none;
+    width:100%;
+    position: relative;
+    left:0;
+    background-color: rgb(92, 92, 92);
+    color:white;
+}
+
+#profChangeContent
+{
+    position: absolute;
+    width:50%;
+    height:50%;
+    background-color: rgb(47, 47, 47);
+    border-radius: 4% 3%;
+    overflow: hidden;
+}
+
+#profChangeBanner
+{
+    position: relative;
+    height:20%;
+    left:0;
+    top:0;
+    width:100%;
+    background:linear-gradient(to right, rgb(178, 122, 17) 20%, #c16f04 30%, #c99f2c 70%, rgb(178, 122, 17) 80%);
+    background-size: 200% auto;
+    animation: textShine 7s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profChangePhoto
+{
+    position: absolute;
+    top:10%;
+    left:2.5%;
+    height: 20%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 5px solid rgb(47, 47, 47);
+    overflow: hidden;
+    object-fit:cover;
+    z-index: 2;
+}
+
+#profChangeInner
+{
+    position: absolute;
+    left:0;
+    top:30%;
+    width:96%;
+    height:58%;
+    padding:2%;
+}
+
+/*heheheh*/
+
+#profChangeConfirm
+{
+    background-color:green;
+    border:none;
+    height:20%;
+}
+
+#profChangeCancel
+{
+    background-color: rgb(93, 13, 13);
+    border:none;
+    height:20%;
+}
+
+#profChangeInner button
+{
+    transition: all .25s;
+}
+
+#profChangeInner button:hover
+{
+    filter:brightness(150%);
+}

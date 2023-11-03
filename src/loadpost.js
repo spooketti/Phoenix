@@ -17,6 +17,11 @@ postsRef.on("child_added", function(snapshot) {
 
     let pfp = document.createElement("img")
     pfp.src = "images/icon.png"
+    if(dbPost.pfp)
+    {
+      pfp.src = dbPost.pfp
+    }
+    
     pfp.className = "PostImg"
     userHold.appendChild(pfp)
 

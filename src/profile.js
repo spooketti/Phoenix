@@ -5,9 +5,15 @@ let notifTitle = document.getElementById("notifTitle")
 let notifContent = document.getElementById("notifContent")
 let profMenu = document.getElementById("editProfile")
 let handleEdit = document.getElementById("HandleEditProf")
-let changeField = document.getElementById("changeField")
+let changeField = document.getElementById("profChange")
 let usernameEditProf = document.getElementById("UsernameEditProf")
 let postHeadUsername = document.getElementById("PostHeadUsername")
+let postHeadPFP = document.getElementById("PostHeadPFP")
+let pCUN = document.getElementById("profChangeUN")
+let pCPFP = document.getElementById("profChangePFP")
+let editPFP = document.getElementById("editPFP")
+let navPFP = document.getElementById("navPFP")
+let pcphoto = document.getElementById("profChangePhoto")
 let profEditVis = false;
 let currentAspect
 let visDict = {true:"0%",false:"100%"}
@@ -30,6 +36,13 @@ auth.onAuthStateChanged((user) => {
       }
       username = user.displayName
       pfp = user.photoURL
+      if(activeUser.photoURL)
+      {
+        pcphoto.src = pfp
+        editPFP.src = pfp
+        navPFP.src = pfp
+        postHeadPFP.src = pfp
+      }
       //console.log(activeUser)
       var uid = user.uid;
     } else {
@@ -52,25 +65,33 @@ function editProfileMenu()
 
 function editAspect(aspect)
 {
-    changeField.style.transform = "translateY(0%)"
+    changeField.style.zIndex = "12"
+    changeField.style.filter = "opacity(100%)"
+    if(auth.currentUser.photoURL != null && auth.currentUser.displayName != null)
+    {
+    pCPFP.value = auth.currentUser.photoURL
+    pCUN.value = auth.currentUser.displayName
+    }
     currentAspect = aspect
 }
 
 function applyAspect()
 {
-    let newname = changeField.value
-    changeField.style.transform = "translateY(-100%)"
-    switch(currentAspect)
-    {
-        case "Username":
-            activeUser.updateProfile({
+    let newname = pCUN.value
+    let newPFP = pCPFP.value
+    //changeField.style.transform = "translateY(-100%)"
+  activeUser.updateProfile({
                 displayName: newname,
+                photoURL: newPFP
               })
         navName.innerText = newname
         usernameEditProf.innerText = newname
         postHeadUsername.innerText = `Posting As ${newname}`
-        break;
-    }
+        pcphoto.src = newPFP
+        editPFP.src = newPFP
+        navPFP.src = newPFP
+        postHeadPFP.src = newPFP
+    
     
 
 }

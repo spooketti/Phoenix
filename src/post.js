@@ -37,6 +37,7 @@ function submitPost()
     let message = document.getElementById("PostBodyInput").value
     let likes = 0
     let username = auth.currentUser.displayName
+    let pfp = auth.currentUser.photoURL
     try{
        let handle = auth.currentUser.email.split("@")
        handle = handle[0]
@@ -48,7 +49,8 @@ function submitPost()
            timestamp,
            likes,
            username,
-           handle
+           handle,
+           pfp
          });
        hidePostMenu()
        navBar.style.transform = 'translateY(0%)'

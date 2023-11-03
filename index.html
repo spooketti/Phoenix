@@ -73,10 +73,22 @@
       <h3 id="HandleEditProf">Error Please Report </h3>
       <br>
       <br>
-      <button class="ProfEditButton" onclick="applyAspect()">Apply All Changes</button>
-      <br>
       <br>
       <button class="ProfEditButton" onclick="auth.signOut()">Sign Out</button>
+    </div>
+    <div id="profChange">
+      <div id="profChangeContent">
+        <div id="profChangeBanner">Your Profile</div>
+        <img id="profChangePhoto" src="images/dogsit.jpg">
+        <div id="profChangeInner">
+          <textarea id="profChangeUN" placeholder="Username"></textarea>
+        <br>
+        <textarea id="profChangePFP" placeholder="Profile Picture URL"></textarea>
+        <button id="profChangeConfirm" onclick="document.getElementById('profChange').style.filter = 'opacity(0%)';document.getElementById('profChange').style.zIndex = '0';applyAspect()">Save All Changes</button>
+        <button id="profChangeCancel" onclick="document.getElementById('profChange').style.filter = 'opacity(0%)';document.getElementById('profChange').style.zIndex = '0';">Cancel All Changes</button>
+        </div>
+        
+      </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
