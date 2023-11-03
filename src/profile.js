@@ -65,7 +65,7 @@ function editProfileMenu()
 
 function editAspect(aspect)
 {
-    changeField.style.zIndex = "12"
+    changeField.style.pointerEvents = "all"
     changeField.style.filter = "opacity(100%)"
     if(auth.currentUser.photoURL != null && auth.currentUser.displayName != null)
     {
