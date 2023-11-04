@@ -1,32 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<!DOCTYPE html> 
+<html lang="en"> 
+
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Profiles</title>
-    <link rel="stylesheet" href="style.css"> <!-- Add your Phoenix theme stylesheet -->
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>User Profiles</title> <!-- title of the friends page -->
+    <link rel="stylesheet" href="style.css"> <!-- links to style.css to match website -->
     <link rel="icon" type="image/x-icon" href="images/Pheonix.jpg">
+    <!-- displays the pheonix icon in the top right of the website -->
     <style>
         #userDetails {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            /* styles the user files */
         }
 
         .profile-card {
-            width: 48%; /* Adjust the width as needed */
+            width: 48%;
             margin-bottom: 20px;
             padding: 10px;
             border: 1px solid #ccc;
             text-align: center;
+            /* styles the profile cards */
         }
     </style>
 </head>
 <body>
-    <h1>User Profiles</h1>
+    <h1>User Profiles</h1> <!-- the page heading -->
     <div id="userDetails">
-        <!-- User profiles will be displayed here -->
+        <!-- where the "friends" will be displayed -->
     </div>
     <script>
         const user_data = [
@@ -35,35 +39,31 @@
             { name: "Bortensen", profile_picture: "images/BortensenPfp.jpg", age: 40, location: "Hawaii" },
             { name: "FroggyNampali", profile_picture: "images/FroggyPfp.jpg", age: 15, location: "New York" },
             { name: "Gavin", profile_picture: "images/GavinPfp.jpg", age: 15, location: "Paris" }
-
-        ]; // Closing the user_data array
+        ]; // friends data
 
         function displayUserProfiles() {
-            const userDetails = document.getElementById("userDetails");
+            const userDetails = document.getElementById("userDetails"); // gets the user data
 
             user_data.forEach(profile => {
-                const userDiv = document.createElement("div");
-                userDiv.classList.add("profile-card"); // Add a CSS class for styling
+                const userDiv = document.createElement("div"); // creates a box or div for the users
+                userDiv.classList.add("profile-card"); // styles the user boxes
 
-                // Create an image element for the profile picture
-                const profileImage = document.createElement("img");
-                profileImage.src = profile.profile_picture;
-                profileImage.alt = profile.name;
-                profileImage.style.maxWidth = "100px"; // Adjust the max width as needed
+                const profileImage = document.createElement("img"); // creates the image part for the user
+                profileImage.src = profile.profile_picture; // sets the profile picture source
+                profileImage.alt = profile.name; // sets alternate text for image
+                profileImage.style.maxWidth = "100px"; // keeps the pfp small enough
 
-                // Create a div for name and other details
-                const detailsDiv = document.createElement("div");
+                const detailsDiv = document.createElement("div"); // creates a box for the user details
                 detailsDiv.innerHTML = `<strong>Name:</strong> ${profile.name}<br><strong>Age:</strong> ${profile.age}<br><strong>Location:</strong> ${profile.location}`;
+                // fills the box with the user details
 
-                // Append the image and details to the userDiv
-                userDiv.appendChild(profileImage);
-                userDiv.appendChild(detailsDiv);
-
-                userDetails.appendChild(userDiv);
+                userDiv.appendChild(profileImage); // adds pfp to user
+                userDiv.appendChild(detailsDiv); // adds data to user
+                userDetails.appendChild(userDiv); // adds users to the different boxes
             });
         }
 
-        displayUserProfiles();
+        displayUserProfiles(); // displays profiles!
     </script>
 </body>
 </html>
