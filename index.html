@@ -15,8 +15,8 @@
     <nav id="navbar" onmouseleave="navbarVis = false; navBar.style.transform = 'translateY(-100%)'">
       <img src="images/icon.png" id="navIcon">
       <a href="index.html">Phoenix</a>
-      <!-- "Friends" button, same size, invisible background -->
-      <button id="navFriends" onclick="window.location.href='navFriends.html'">Friends</button>
+      <!-- "friends" button with on click button and styles with the website -->
+      <button id="navFriends" onclick="window.location.href='navFriends.html'">Friends</button>  <!-- shows friend button -->
       <button id="navPost" onclick="if(!activeUser.displayName){noUsernameError();return;};document.getElementById('CreatePost').style.display = 'flex'; navbarVis = false; navBar.style.transform = 'translateY(-100%)'">Post</button>
       <div id="NavProfile" onclick="editProfileMenu()">
         <img src="images/Username.png" id="navPFP">
